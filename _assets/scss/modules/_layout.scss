@@ -1,0 +1,96 @@
+@use '../mixin/mixin'as *;
+@use '../setting/setting'as *;
+
+//------------------------------------
+// layout
+//------------------------------------
+.inner {
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 0 200px;
+
+	@include media(l) {
+		padding: 0 80px;
+
+		@include media(m) {
+			padding: 0 40px;
+
+			@include media(s) {
+				padding: 0 20px;
+			}
+		}
+	}
+}
+
+.section {
+	padding: rem(60) 0;
+
+	@include media(m) {
+		padding: rem(40) 0;
+	}
+
+	&--accent {
+		background-color: $color-sub-light;
+	}
+}
+
+.section-title {
+	font-size: rem(32);
+	text-align: center;
+
+	@include media(m) {
+		font-size: rem(24);
+	}
+
+	span {
+		display: block;
+		font-size: rem(16);
+		color: $color-main;
+		position: relative;
+		margin-top: rem(4);
+
+		@include media(m) {
+			font-size: rem(14);
+		}
+
+		&::after {
+			content: "";
+			display: block;
+			width: 64px;
+			height: 1px;
+			background-color: $color-sub;
+			position: absolute;
+			top: calc(100% + rem(16));
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+
+	&--accent {
+		background-color: $color-sub-light;
+	}
+}
+
+.aside {
+	margin-top: rem(58);
+
+	@include media(s) {
+		margin-top: rem(40);
+	}
+}
+
+.max-m {
+	display: none;
+
+	@include media(m) {
+		display: block;
+	}
+}
+
+.max-s {
+	display: none;
+
+	@include media(s) {
+		display: block;
+	}
+}

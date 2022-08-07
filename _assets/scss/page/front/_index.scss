@@ -1,0 +1,558 @@
+@use '../../mixin/mixin'as *;
+@use '../../setting/setting'as *;
+
+//------------------------------------
+// フロントページ
+//------------------------------------
+
+/* メインビュー
+------------------------------------*/
+.mainView {
+  height: 900px;
+  background: transparent url('../img/common/main-view.jpeg') no-repeat center center / cover;
+  margin-bottom: 60px;
+
+  @include media(s) {
+    height: 812px;
+    margin-bottom: 41px;
+  }
+
+  >.inner {
+    height: 100%;
+    position: relative;
+  }
+}
+
+.mainView-lead {
+  color: $color-text-reverse;
+  position: absolute;
+  top: 54%;
+  transform: translateY(-50%);
+  padding: 0 rem(104) rem(32) 0;
+  border-bottom: 1px solid $color-mv-line;
+
+  @include media(m) {
+    padding: 0 rem(104) rem(16) 0;
+
+    @include media(s) {
+      top: 53%;
+      padding: 0 0 rem(12) 0;
+    }
+  }
+
+  &__main {
+    font-size: rem(56);
+    line-height: calc(80/56);
+    text-shadow: 0px 0px 40px $color-text, 0px 0px 40px $color-text, 0px 0px 40px $color-text, 0px 0px 40px $color-text, 0px 0px 40px $color-text, 0px 0px 40px $color-text, 0px 0px 40px $color-text, 0px 0px 40px $color-text, 0px 0px 40px $color-text;
+
+    @include media(m) {
+      font-size: rem(40);
+      line-height: calc(56/40);
+    }
+  }
+
+  &__sub {
+    font-size: rem(36);
+    margin-top: rem(10);
+    text-shadow: 0px 0px 40px $color-text, 0px 0px 40px $color-text, 0px 0px 40px $color-text, 0px 0px 40px $color-text, 0px 0px 40px $color-text, 0px 0px 40px $color-text, 0px 0px 40px $color-text, 0px 0px 40px $color-text, 0px 0px 40px $color-text;
+
+    @include media(m) {
+      font-size: rem(24);
+      line-height: calc(40/24);
+      margin-top: 0;
+    }
+  }
+}
+
+/* コンセプト
+------------------------------------*/
+.concept {
+
+  >.inner {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.concept-content {
+  margin-top: rem(48);
+  margin-bottom: rem(30);
+  position: relative;
+
+  @include media(l) {
+
+    @include media(m) {
+      margin-top: rem(40);
+      display: flex;
+      flex-direction: column-reverse;
+
+      @include media(s) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.concept-lead {
+  max-width: 640px;
+  color: $color-text-reverse;
+  background-color: $color-main;
+  padding: rem(60) rem(48) rem(64);
+  position: absolute;
+  top: 185px;
+  left: 0;
+
+  @include media(m) {
+    padding: rem(58) rem(32);
+    position: relative;
+    top: auto;
+    left: auto;
+    margin-top: rem(-120);
+
+    @include media(s) {
+      width: 100%;
+      padding: rem(56) rem(20);
+      margin-top: 0;
+    }
+  }
+
+  &__title {
+    font-size: rem(24);
+    line-height: calc(36/24);
+
+    @include media(m) {
+      font-size: rem(20);
+      line-height: 1;
+    }
+  }
+
+  &__text {
+    font-size: rem(16);
+    line-height: calc(40/16);
+    letter-spacing: 0.05em;
+    text-align: justify;
+    margin-top: rem(10);
+
+    @include media(m) {
+      line-height: calc(32/16);
+      margin-top: rem(14);
+    }
+  }
+
+  &__btnWrapper {
+    text-align: end;
+    margin-top: rem(21);
+    padding-right: rem(21);
+
+    @include media(s) {
+      margin-top: rem(27);
+    }
+  }
+}
+
+.concept-imgWrapper {
+  width: 1120px;
+  max-width: 100%;
+  height: 480px;
+  margin-left: auto;
+
+  @include media(m) {
+    height: 360px;
+  }
+
+  img {
+    object-fit: cover;
+
+    @include media(m) {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+/* 施工実績
+------------------------------------*/
+.works {
+
+  >.inner {
+    position: relative;
+  }
+}
+
+.works-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: rem(48);
+
+  @include media(m) {
+    margin-top: rem(40);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include media(xxl) {
+      width: calc(33.3% - rem(40) * 2 / 3);
+
+      &:nth-child(n + 4) {
+        margin-top: rem(64);
+      }
+
+      &:not(:nth-child(3n)) {
+        margin-right: rem(40);
+      }
+    }
+
+    @include media(xl) {
+      width: calc(33.3% - rem(40) * 2 / 3);
+
+      &:nth-child(n + 4) {
+        margin-top: rem(64);
+      }
+
+      &:not(:nth-child(3n)) {
+        margin-right: rem(40);
+      }
+
+      @include media(s) {
+        width: calc(50% - rem(15) * 1 / 2);
+
+        &:nth-child(n + 4) {
+          margin-top: 0;
+        }
+
+        &:not(:nth-child(3n)) {
+          margin-right: 0;
+        }
+
+        &:nth-child(n + 3) {
+          margin-top: rem(40);
+        }
+
+        &:not(:nth-child(2n)) {
+          margin-right: rem(15);
+        }
+      }
+    }
+  }
+
+  &__body {
+    margin-top: rem(25);
+    margin-left: rem(36);
+
+    @include media(s) {
+      margin-top: rem(16);
+      margin-left: rem(17);
+    }
+  }
+
+  &__title {
+    font-size: rem(24);
+
+    @include media(s) {
+      font-size: rem(20);
+    }
+  }
+
+  &__btnWrapper {
+    margin-top: rem(24);
+    position: relative;
+
+    @include media(s) {
+      margin-top: rem(16);
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 144px;
+      background-color: $color-text;
+      position: absolute;
+      bottom: 0;
+      left: -13px;
+
+      @include media(s) {
+        height: 98px;
+        left: -9px;
+      }
+    }
+  }
+
+  &__imgWrapper {
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.works-btnWrapper {
+  text-align: center;
+  margin-top: rem(80);
+
+  @include media(s) {
+    margin-top: rem(63);
+  }
+}
+
+.works-bg {
+  width: 68.5%;
+  height: 67.2%;
+  background-color: $color-sub-light;
+  position: absolute;
+  right: 0;
+  bottom: 91px;
+  z-index: -1;
+
+  @include media(m) {
+    width: 75%;
+    height: 64%;
+    bottom: 73px;
+  }
+}
+
+/* お知らせ
+------------------------------------*/
+.news-list {
+  margin-top: rem(40);
+
+  @include media(s) {
+    max-width: 500px;
+    margin-top: rem(14);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &__item {
+
+    &:not(:first-child) {
+      margin-top: rem(16);
+
+      @include media(s) {
+        margin-top: 0;
+        border-top: 1px solid $color-news-line;
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+
+    @include media(s) {
+      display: block;
+      padding: rem(21) 0;
+    }
+  }
+
+  &__attribute {
+    display: flex;
+  }
+
+  &__date,
+  &__category,
+  &__title {
+    padding: rem(20) 0;
+    border-left: 1px solid $color-news-line;
+
+    @include media(s) {
+      padding: 0;
+      border: none;
+    }
+  }
+
+  &__date,
+  &__category {
+    text-align: center;
+
+    @include media(s) {
+      width: auto;
+    }
+  }
+
+  &__date {
+    width: 154px;
+
+    @include media(s) {
+      width: auto;
+      font-size: rem(14);
+    }
+  }
+
+  &__category {
+    width: 140px;
+
+    @include media(s) {
+      width: auto;
+      margin-left: rem(25);
+    }
+
+    &--accent {
+      color: $color-sub;
+    }
+  }
+
+  &__title {
+    padding-left: rem(40);
+    line-height: calc(24/16);
+
+    @include media(s) {
+      padding-left: 0;
+      margin-top: rem(10);
+    }
+  }
+
+  &__btnWrapper {
+    text-align: center;
+    margin-top: rem(34);
+
+    @include media(s) {
+      margin-top: 0;
+    }
+  }
+}
+
+/* お問い合わせ
+------------------------------------*/
+.contact {
+  padding: rem(120) 0;
+
+  @include media(s) {
+    padding: rem(40) 0 rem(5);
+  }
+}
+
+.contact-list {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: rem(48);
+
+  @include media(m) {
+    margin-top: rem(40);
+
+    @include media(s) {
+      max-width: 335px;
+      margin-right: auto;
+      margin-left: auto;
+      flex-direction: column;
+      margin-top: rem(8);
+    }
+  }
+
+  &__item {
+    width: 284px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: start;
+    padding: rem(28) 0;
+
+    @include media(m) {
+      padding: rem(20) rem(40);
+
+      @include media(s) {
+        width: 100%;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        padding: rem(32) rem(12);
+      }
+    }
+
+    &:not(:first-child) {
+      border-left: 1px solid $color-text;
+
+      @include media(s) {
+        border-left: none;
+        border-top: 1px solid $color-text;
+      }
+    }
+  }
+
+  &__body {
+
+    @include media(s) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    font-size: rem(20);
+    line-height: 1.5;
+    margin-top: rem(14);
+    white-space: nowrap;
+
+    @include media(s) {
+      font-size: rem(16);
+      margin-top: 0;
+      width: 120px;
+    }
+  }
+
+  &__ctaWrapper,
+  &__tel {
+    margin-top: rem(16);
+
+    @include media(s) {
+      margin-top: 0;
+    }
+  }
+
+  &__ctaWrapper {
+
+    &--noBreaks {
+
+      @include media(m) {
+        margin-top: rem(47);
+
+        @include media(s) {
+          margin-top: 0;
+        }
+      }
+    }
+
+    &--pc {
+
+      @include media(s) {
+        display: none;
+      }
+    }
+
+    &--sp {
+      display: none;
+
+      @include media(s) {
+        display: block;
+        position: relative;
+      }
+
+      .contact-list__tel {
+        margin-top: rem(8);
+        position: absolute;
+        bottom: -20px;
+        right: 0;
+
+        span {
+          font-size: rem(11);
+          line-height: calc(16/12);
+          color: $color-main;
+        }
+      }
+    }
+  }
+
+  &__tel {
+    font-size: rem(24);
+
+    span {
+      display: block;
+      font-size: rem(12);
+      margin-top: rem(10);
+      white-space: nowrap;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@use '../mixin/mixin'as *;
+@use '../setting/setting'as *;
+
+//------------------------------------
+// z-indexの管理
+//------------------------------------
+.header {
+  z-index: 100;
+}
+
+.drawer-nav {
+  @include media(xl) {
+    z-index: 30;
+  }
+}
+
+.drawer-bg {
+  z-index: 10;
+}

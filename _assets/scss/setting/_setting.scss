@@ -1,0 +1,35 @@
+@charset 'UTF-8';
+
+// フォントの設定----------------------------
+$base-font-size: 16;
+
+html {
+	font-size: $base-font-size + px;
+}
+
+@function rem($px) {
+	@return calc($px / $base-font-size * 1rem);
+}
+
+$base-width: 1440;
+
+@function vw($px) {
+	@return calc($px / $base-width * 100vw);
+}
+
+$line-height: 1;
+
+$font-family: 'Lora',
+'Noto Serif JP',
+serif;
+
+// 色の設定----------------------------
+$color-text: #333;
+$color-text-reverse: #fff;
+
+$color-main: #31452d;
+$color-sub: #b69b04;
+$color-sub-light: #eeead0;
+
+$color-mv-line: #f9fbfa;
+$color-news-line: #e5e5e5;
